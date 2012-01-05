@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Username:</b>
+  <%= @user.username %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%= @user.firstname %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @user.lastname %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @user.location %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @user.description %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+<p>
+  <b>User Tweets:</b><br/>
+  <%= render '/tweets/display/display_tweet_table' %>
+<% @user.tweets.each do |t| %>
+    <% @tweet=t %>
+   <%= render '/tweets/display/displayTweets'%>
+<% end %>
+</table>
+</p>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

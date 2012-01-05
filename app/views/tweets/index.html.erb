@@ -1,0 +1,13 @@
+<h1>Listing tweets</h1>
+
+  <%= render '/tweets/display/display_tweet_table' %>
+
+<% @tweets.each do |tweet| %>
+      <% @tweet=tweet %>
+ <%= render '/tweets/display/displayTweets'%>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tweet', new_tweet_path %>

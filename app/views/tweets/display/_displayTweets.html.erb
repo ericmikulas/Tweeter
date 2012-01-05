@@ -1,0 +1,12 @@
+
+  <tr>
+    <td><%= link_to @tweet.user.username, @tweet.user %></td>
+    <td><%= @tweet.time %></td>
+    <td><%= link_to @tweet.text, @tweet %></td>
+    <% if user_signed_in? %>
+        <% if @tweet.user_id == current_user.id %>
+    <td><%= link_to 'Edit', edit_tweet_path(@tweet) %></td>
+    <td><%= link_to 'Destroy', @tweet, confirm: 'Are you sure?', method: :delete %></td>
+        <%end%>
+    <%end%>
+  </tr>
