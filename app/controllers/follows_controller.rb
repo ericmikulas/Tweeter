@@ -25,6 +25,11 @@ class FollowsController < ApplicationController
   # GET /follows/new
   # GET /follows/new.json
   def new
+    if !user_signed_in?
+      session[:return_to] = new_follow_path
+      redirect_to(new_user_session_path)
+      return
+    end
     @follow = Follow.new
 
     respond_to do |format|
@@ -43,7 +48,7 @@ class FollowsController < ApplicationController
   def create
 
     @follow = Follow.new()
-    if !user_signed_in?
+    if user_signed_in?
       @follow = Follow.new
       @follow.user_id = current_user.id
       @follow.follow_user_id =params[:follow_user_id]

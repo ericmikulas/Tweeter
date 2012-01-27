@@ -186,7 +186,7 @@ Devise.setup do |config|
   # access, but formats like :xml or :json, should return 401.
   #
   # If you have any extra navigational formats, like :iphone or :mobile, you
-  # should add them to the navigational formats lists.
+  # should new them to the navigational formats lists.
   #
   # The :"*/*" and "*/*" formats below is required to match Internet
   # Explorer requests.

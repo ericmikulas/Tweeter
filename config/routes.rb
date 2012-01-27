@@ -1,26 +1,37 @@
 Tweeter::Application.routes.draw do
-  resources :follows
 
   devise_for :users
 
-  resources :add_email_to_users
+  #resource :followings#show
+  #resource :followings#index
+  #resource :followings#new
+  #resource :followings#destroy
+  resources :follows
 
   resources :tweets
+  resources :followings
 
   resources :users
-
   root :to => 'tweets#index'
+  match 'following/:id/:follow_user_id'=> 'following#create', :as=>:create
+  match 'followings/new/:follow_user_id'=>'followings#create',  :as=>:create
+  match 'following/'=>'followings#index'
+  match 'following/:id'=>'followings#index'
+ # match 'followings'=>'followings#index'
+  #match 'follows/:follow_user_id' =>'follows#create'
+ # match 'followings/show/:id' => 'followings#show'
+ # match 'followings/:id'=> 'followings#index'
+ # match 'followings/:following_user_id/new, :to'=>'followings#new'
 
   devise_for :users,  :class_name => 'User'
   devise_scope :user do
     root :to=> "devise/registrations#new"
   end
-  match 'follows/:follow_user_id' =>'follows#create'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
+  #   match 'products/:id' => 'catalog#show'
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:

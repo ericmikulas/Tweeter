@@ -25,3 +25,12 @@ Scenario: create a tweet
   And I will be logged in
   And I click New Tweet
   And I create a new Tweet saying This is Tweet 1
+
+@selenium
+Scenario: I should be able to creat multiple accounts with the same email
+  Given I am an unauthenticated user
+  And I am on the home page
+  When I click Register
+  And I create a login with username erock2
+  Then I will be logged in
+  And I am on the home page

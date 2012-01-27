@@ -39,7 +39,7 @@
 # Set the way inline errors will be displayed.
 # Defaults to :sentence, valid options are :sentence, :list, :first and :none
 # Formtastic::FormBuilder.inline_errors = :sentence
-# Formtastic uses the following classes as default for hints, inline_errors and error list
+# Formtastic uses the followings classes as default for hints, inline_errors and error list
 
 # If you override the class here, please ensure to override it in your stylesheets as well
 # Formtastic::FormBuilder.default_hint_class = "inline-hints"
@@ -68,7 +68,7 @@
 # i.e. :label => true, or :hint => true (or opposite depending on initialized value)
 # Formtastic::FormBuilder.i18n_lookups_by_default = false
 
-# You can add custom inputs or override parts of Formtastic by subclassing Formtastic::FormBuilder and
+# You can new custom inputs or override parts of Formtastic by subclassing Formtastic::FormBuilder and
 # specifying that class here.  Defaults to Formtastic::FormBuilder.
 # Formtastic::Helpers::FormHelper.builder = MyCustomBuilder
 
@@ -77,6 +77,6 @@
 # Formtastic::FormBuilder.use_required_attribute = true
 
 # You can opt-in to new HTML5 browser validations (for things like email and url inputs) by setting
-# this to false. Doing so will add a `novalidate` attribute to the `<form>` tag.
+# this to false. Doing so will new a `novalidate` attribute to the `<form>` tag.
 # See http://diveintohtml5.org/forms.html#validation for more info.
 # Formtastic::FormBuilder.perform_browser_validations = true

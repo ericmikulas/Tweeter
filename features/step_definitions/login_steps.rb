@@ -44,6 +44,12 @@ Then /^I create a new Tweet saying (.+?)$/ do |tweet|
   fill_in 'tweet_text', :with => tweet
   click_on 'Create Tweet'
 end
+Then /^I should see (.+?) once$/ do |name|
+  i = i +1
+  if(i >1)
+    assert fail()
+  end
+end
 #Then  "show me where i am" do
 # save_and_open_page
 #end

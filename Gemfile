@@ -15,6 +15,7 @@ group :assets do
   gem 'sass-rails',   '~> 3.1.5'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'foreigner'
   group :cucumber do
     gem 'capybara'
     gem 'database_cleaner'
@@ -26,7 +27,7 @@ group :assets do
     gem "Selenium"
     gem "selenium-client"
 
-end
+  end
   gem 'rspec'
   gem 'rspec-rails'
   #gem 'devise:TestHelpers'

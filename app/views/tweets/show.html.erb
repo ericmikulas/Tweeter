@@ -15,7 +15,7 @@
   <%= @tweet.text %>
 </p>
 <p>
-  <%= link_to 'Follow', new_follow_url {[:follow_user_id  => @tweet.user.id]}%>
+  <%= link_to 'Follow', new_following_url()+"/"+@tweet.user_id.to_s%>
 </p>
 <% if user_signed_in? %>
 <%if current_user.id == @tweet.user.id %>

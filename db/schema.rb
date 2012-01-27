@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111228135329) do
+ActiveRecord::Schema.define(:version => 20120127191124) do
 
   create_table "follows", :force => true do |t|
     t.integer  "user_id"
@@ -51,7 +51,9 @@ ActiveRecord::Schema.define(:version => 20111228135329) do
     t.string   "last_sign_in_ip"
   end
 
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["username"], :name => "index_users_on_username"
+
+  add_foreign_key "follows", "users", :name => "follows_follow_user_id_fk", :column => "follow_user_id"
 
 end
